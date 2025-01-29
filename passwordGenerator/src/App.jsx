@@ -26,17 +26,11 @@ function App() {
     setpassword(pass);
   }, [length, numberallowed, charallowed, setpassword]);
 
-
-
-
   const copypasswordtoclipboard = useCallback(() => {
-    passwordref.current?.select();
-    passwordref.current?.setSelectionRange(0, 3);
     window.navigator.clipboard.writeText(Password);
+    passwordref.current?.select();
+    // passwordref.current?.setSelectionRange(0, 3);
   }, [Password]);
-
-
-  
 
   useEffect(() => {
     PasswordGenerator();
